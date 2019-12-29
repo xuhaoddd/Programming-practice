@@ -16,7 +16,7 @@ int convert_binary_to_octal(int n);
 void reverse_sentence();
 void remove_special_character(char*);
 int calculate_string_lenth(char*);
-void joseph_death_game(int*,int*);
+void joseph_death_game(int*);
 
 int main(int argc, char* argv[]) {
 
@@ -31,12 +31,16 @@ int main(int argc, char* argv[]) {
 	}
 	//*****************************
 	*/
-	int in[30];
-	int out[50];
-	memset(in,0,sizeof(in));
-	joseph_death_game(in,out);
-	for(int i=1;i<=15;++i){
-		printf("%d ",out[i]);
+	int in[31];
+	memset(in,0,31*sizeof(int));
+	for(int i=1;i<=30;++i){
+		printf("%d ",in[i]);
+}
+	printf("\n");
+	joseph_death_game(in);
+	for(int i=1;i<=30;++i){
+		if(in[i]!=0)
+			printf("%d ",in[i]);
 	}
 	return 0;
 }
@@ -155,38 +159,32 @@ int calculate_string_lenth(char* ch){
 	return i;
 }
 
-void joseph_death_game(int* in,int* out){
-	// int count=0;
-	// while(count!=15){
-		// count++;
-		// for(int i=1;i<=30-count;i++){
-			// if(i%9==0){
-				// out[count]=in[i];
-				// for(int j=i;j<30;j++){
-					// in[j]=in[j+1];
-				// }
-			// }
-		// }
-	// }
-	int count=0;
-	int j=0
-	int i=1;
-	while(count!=15){
-		count++;
-		if(i==31)
-			i=1;
-		else{
-			while(i!=30){
-				while(j!=9){
-					if(in[i]==0){
-						j++;
-					}
+void joseph_death_game(int* in) {
+	int count = 0;
+	int j = 0;
+	int i = 0;
+	while (count != 15) {
+		if (i == 30) {
+			i = 0;
+			if (in[30] == 0) {
+				if (j == 9) {
+					count++;
+					in[30] = 30;
+					j = 0;
 				}
-				
-				j=0;
-				out[count]=i;
-				i++;
+			}
+		}
+		else {
+			i++;
+			if (in[i] == 0) {
+				j++;
+				if (j == 9) {
+					count++;
+					in[i] = i;
+					j = 0;
+				}
 			}
 		}
 	}
 }
+
