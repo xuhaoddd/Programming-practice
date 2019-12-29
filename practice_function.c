@@ -156,15 +156,36 @@ int calculate_string_lenth(char* ch){
 }
 
 void joseph_death_game(int* in,int* out){
+	// int count=0;
+	// while(count!=15){
+		// count++;
+		// for(int i=1;i<=30-count;i++){
+			// if(i%9==0){
+				// out[count]=in[i];
+				// for(int j=i;j<30;j++){
+					// in[j]=in[j+1];
+				// }
+			// }
+		// }
+	// }
 	int count=0;
+	int j=0
+	int i=1;
 	while(count!=15){
 		count++;
-		for(int i=1;i<=30-count;i++){
-			if(i%9==0){
-				out[count]=in[i];
-				for(int j=i;j<30;j++){
-					in[j]=in[j+1];
+		if(i==31)
+			i=1;
+		else{
+			while(i!=30){
+				while(j!=9){
+					if(in[i]==0){
+						j++;
+					}
 				}
+				
+				j=0;
+				out[count]=i;
+				i++;
 			}
 		}
 	}
