@@ -17,31 +17,35 @@ void reverse_sentence();
 void remove_special_character(char*);
 int calculate_string_lenth(char*);
 void joseph_death_game(int*);
+bool completely_sqrt(int n);
 
 int main(int argc, char* argv[]) {
 
 
 	//  fibonacci function
-	/*
+
 	int n1;
-	printf("input the number of fibonacci sequence:");
-	scanf("%d",&n1);
-	for(int i=1;i<=n1;i++){
-		printf("%d ",fibonacci(i));
+	// printf("input the number of fibonacci sequence:");
+	// scanf("%d",&n1);
+	for(int i=-100;i< 10000;i++){
+		if(completely_sqrt(i+100) && completely_sqrt(i+168))
+			printf("%d ",i);
 	}
-	//*****************************
-	*/
-	int in[31];
-	memset(in,0,31*sizeof(int));
-	for(int i=1;i<=30;++i){
-		printf("%d ",in[i]);
-}
-	printf("\n");
-	joseph_death_game(in);
-	for(int i=1;i<=30;++i){
-		if(in[i]!=0)
-			printf("%d ",in[i]);
-	}
+	// for(int i=1;i<=n1;i++){
+		// printf("%d ",fibonacci(i));
+	// }
+
+	// int in[31];
+	// memset(in,0,31*sizeof(int));
+	// for(int i=1;i<=30;++i){
+		// printf("%d ",in[i]);
+// }
+	// printf("\n");
+	// joseph_death_game(in);
+	// for(int i=1;i<=30;++i){
+		// if(in[i]!=0)
+			// printf("%d ",in[i]);
+	// }
 	return 0;
 }
 
@@ -186,5 +190,13 @@ void joseph_death_game(int* in) {
 			}
 		}
 	}
+}
+
+bool completely_sqrt(int n){
+	for(int i=1;i<=n;i++){
+		if(i*i==n)
+			return 1;
+	}
+	return 0;
 }
 
