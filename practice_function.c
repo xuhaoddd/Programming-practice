@@ -23,14 +23,13 @@ int main(int argc, char* argv[]) {
 
 
 	//  fibonacci function
-
 	int n1;
 	// printf("input the number of fibonacci sequence:");
 	// scanf("%d",&n1);
-	for(int i=-100;i< 10000;i++){
-		if(completely_sqrt(i+100) && completely_sqrt(i+168))
-			printf("%d ",i);
-	}
+	// for(int i=-100;i< 10000;i++){
+		// if(completely_sqrt(i+100) && completely_sqrt(i+168))
+			// printf("%d ",i);
+	// }
 	// for(int i=1;i<=n1;i++){
 		// printf("%d ",fibonacci(i));
 	// }
