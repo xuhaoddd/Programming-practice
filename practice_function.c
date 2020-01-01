@@ -39,6 +39,7 @@ int main(int argc, char* argv[]) {
 	// for(int i=1;i<=30;++i){
 		// printf("%d ",in[i]);
 // }
+
 	// printf("\n");
 	// joseph_death_game(in);
 	// for(int i=1;i<=30;++i){
