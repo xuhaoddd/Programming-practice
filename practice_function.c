@@ -22,7 +22,6 @@ bool completely_sqrt(int n);
 int main(int argc, char* argv[]) {
 
 
-	//  fibonacci function
 	int n1;
 	// printf("input the number of fibonacci sequence:");
 	// scanf("%d",&n1);
